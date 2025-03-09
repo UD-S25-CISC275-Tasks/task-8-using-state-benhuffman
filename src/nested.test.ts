@@ -123,7 +123,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["this", "one", "is", "not", "empty", "either"],
                 expected: "one",
                 points: 5,
-                published: true,
+                published: true
             },
             {
                 id: 3,
@@ -239,8 +239,8 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
-            },
+                published: false
+            }
         ]);
         expect(removeQuestion(BLANK_QUESTIONS, 47)).toEqual([
             {
@@ -251,7 +251,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 2,
@@ -381,11 +381,11 @@ describe("Testing the Question[] functions", () => {
             "Empty 2",
             "Empty 3",
             "Empty 4",
-            "Empty 5 (Actual)",
+            "Empty 5 (Actual)"
         ]);
     });
 
-    test("(3 pts) Testing the sumPoints function", () => {
+    test("Testing the sumPoints function", () => {
         expect(sumPoints(BLANK_QUESTIONS)).toEqual(3);
         expect(sumPoints(SIMPLE_QUESTIONS)).toEqual(5);
         expect(sumPoints(TRIVIA_QUESTIONS)).toEqual(20);
@@ -393,7 +393,7 @@ describe("Testing the Question[] functions", () => {
         expect(sumPoints(SIMPLE_QUESTIONS_2)).toEqual(300);
     });
 
-    test("(3 pts) Testing the sumPublishedPoints function", () => {
+    test("Testing the sumPublishedPoints function", () => {
         expect(sumPublishedPoints(BLANK_QUESTIONS)).toEqual(0);
         expect(sumPublishedPoints(SIMPLE_QUESTIONS)).toEqual(2);
         expect(sumPublishedPoints(TRIVIA_QUESTIONS)).toEqual(0);
@@ -401,7 +401,7 @@ describe("Testing the Question[] functions", () => {
         expect(sumPublishedPoints(SIMPLE_QUESTIONS_2)).toEqual(300);
     });
 
-    test("(3 pts) Testing the toCSV function", () => {
+    test("Testing the toCSV function", () => {
         expect(toCSV(BLANK_QUESTIONS)).toEqual(`id,name,options,points,published
 1,Question 1,0,1,false
 47,My New Question,0,1,false
@@ -432,40 +432,40 @@ describe("Testing the Question[] functions", () => {
 1937,Listening,0,100,true`);
     });
 
-    test("(3 pts) Testing the makeAnswers function", () => {
+    test("Testing the makeAnswers function", () => {
         expect(makeAnswers(BLANK_QUESTIONS)).toEqual([
             { questionId: 1, correct: false, text: "", submitted: false },
             { questionId: 47, correct: false, text: "", submitted: false },
-            { questionId: 2, correct: false, text: "", submitted: false },
+            { questionId: 2, correct: false, text: "", submitted: false }
         ]);
         expect(makeAnswers(SIMPLE_QUESTIONS)).toEqual([
             { questionId: 1, correct: false, text: "", submitted: false },
             { questionId: 2, correct: false, text: "", submitted: false },
             { questionId: 5, correct: false, text: "", submitted: false },
-            { questionId: 9, correct: false, text: "", submitted: false },
+            { questionId: 9, correct: false, text: "", submitted: false }
         ]);
         expect(makeAnswers(TRIVIA_QUESTIONS)).toEqual([
             { questionId: 1, correct: false, text: "", submitted: false },
             { questionId: 2, correct: false, text: "", submitted: false },
-            { questionId: 3, correct: false, text: "", submitted: false },
+            { questionId: 3, correct: false, text: "", submitted: false }
         ]);
         expect(makeAnswers(SIMPLE_QUESTIONS_2)).toEqual([
             { questionId: 478, correct: false, text: "", submitted: false },
             { questionId: 1937, correct: false, text: "", submitted: false },
             { questionId: 479, correct: false, text: "", submitted: false },
             { questionId: 777, correct: false, text: "", submitted: false },
-            { questionId: 1937, correct: false, text: "", submitted: false },
+            { questionId: 1937, correct: false, text: "", submitted: false }
         ]);
         expect(makeAnswers(EMPTY_QUESTIONS)).toEqual([
             { questionId: 1, correct: false, text: "", submitted: false },
             { questionId: 2, correct: false, text: "", submitted: false },
             { questionId: 3, correct: false, text: "", submitted: false },
             { questionId: 4, correct: false, text: "", submitted: false },
-            { questionId: 5, correct: false, text: "", submitted: false },
+            { questionId: 5, correct: false, text: "", submitted: false }
         ]);
     });
 
-    test("(3 pts) Testing the publishAll function", () => {
+    test("Testing the publishAll function", () => {
         expect(publishAll(BLANK_QUESTIONS)).toEqual([
             {
                 id: 1,
@@ -475,7 +475,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 47,
@@ -485,7 +485,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 2,
@@ -495,8 +495,8 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: true,
-            },
+                published: true
+            }
         ]);
         expect(publishAll(SIMPLE_QUESTIONS)).toEqual([
             {
@@ -507,7 +507,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "4",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 2,
@@ -517,7 +517,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Z",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 5,
@@ -527,7 +527,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["red", "apple", "firetruck"],
                 expected: "red",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 9,
@@ -537,8 +537,8 @@ describe("Testing the Question[] functions", () => {
                 options: ["square", "triangle", "circle"],
                 expected: "circle",
                 points: 2,
-                published: true,
-            },
+                published: true
+            }
         ]);
         expect(publishAll(TRIVIA_QUESTIONS)).toEqual([
             {
@@ -549,7 +549,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["Bluey", "YoUDee", "Charles the Wonder Dog"],
                 expected: "YoUDee",
                 points: 7,
-                published: true,
+                published: true
             },
             {
                 id: 2,
@@ -559,11 +559,11 @@ describe("Testing the Question[] functions", () => {
                 options: [
                     "Knowledge is the light of the mind",
                     "Just U Do it",
-                    "Nothing, what's the motto with you?",
+                    "Nothing, what's the motto with you?"
                 ],
                 expected: "Knowledge is the light of the mind",
                 points: 3,
-                published: true,
+                published: true
             },
             {
                 id: 3,
@@ -573,12 +573,12 @@ describe("Testing the Question[] functions", () => {
                 options: [
                     "Zero, why would there be goats on the green?",
                     "18420",
-                    "Two",
+                    "Two"
                 ],
                 expected: "Two",
                 points: 10,
-                published: true,
-            },
+                published: true
+            }
         ]);
         expect(publishAll(EMPTY_QUESTIONS)).toEqual([
             {
@@ -589,7 +589,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["correct", "it is", "not"],
                 expected: "correct",
                 points: 5,
-                published: true,
+                published: true
             },
             {
                 id: 2,
@@ -599,7 +599,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["this", "one", "is", "not", "empty", "either"],
                 expected: "one",
                 points: 5,
-                published: true,
+                published: true
             },
             {
                 id: 3,
@@ -609,7 +609,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 5,
-                published: true,
+                published: true
             },
             {
                 id: 4,
@@ -619,7 +619,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Even this one is not empty",
                 points: 5,
-                published: true,
+                published: true
             },
             {
                 id: 5,
@@ -629,13 +629,13 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 5,
-                published: true,
-            },
+                published: true
+            }
         ]);
         expect(publishAll(SIMPLE_QUESTIONS_2)).toEqual(SIMPLE_QUESTIONS_2);
     });
 
-    test("(3 pts) Testing the sameType function", () => {
+    test("Testing the sameType function", () => {
         expect(sameType([])).toEqual(true);
         expect(sameType(BLANK_QUESTIONS)).toEqual(false);
         expect(sameType(SIMPLE_QUESTIONS)).toEqual(false);
@@ -644,29 +644,29 @@ describe("Testing the Question[] functions", () => {
         expect(sameType(SIMPLE_QUESTIONS_2)).toEqual(true);
     });
 
-    test("(3 pts) Testing the addNewQuestion function", () => {
+    test("Testing the addNewQuestion function", () => {
         expect(
-            addNewQuestion([], 142, "A new question", "short_answer_question"),
+            addNewQuestion([], 142, "A new question", "short_answer_question")
         ).toEqual([NEW_BLANK_QUESTION]);
         expect(
             addNewQuestion(
                 BLANK_QUESTIONS,
                 142,
                 "A new question",
-                "short_answer_question",
-            ),
+                "short_answer_question"
+            )
         ).toEqual([...BLANK_QUESTIONS, NEW_BLANK_QUESTION]);
         expect(
             addNewQuestion(
                 TRIVIA_QUESTIONS,
                 449,
                 "Colors",
-                "multiple_choice_question",
-            ),
+                "multiple_choice_question"
+            )
         ).toEqual([...TRIVIA_QUESTIONS, NEW_TRIVIA_QUESTION]);
     });
 
-    test("(3 pts) Testing the renameQuestionById function", () => {
+    test("Testing the renameQuestionById function", () => {
         expect(renameQuestionById(BLANK_QUESTIONS, 1, "New Name")).toEqual([
             {
                 id: 1,
@@ -676,7 +676,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 47,
@@ -686,7 +686,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 2,
@@ -696,8 +696,8 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
-            },
+                published: false
+            }
         ]);
         expect(renameQuestionById(BLANK_QUESTIONS, 47, "Another Name")).toEqual(
             [
@@ -709,7 +709,7 @@ describe("Testing the Question[] functions", () => {
                     options: [],
                     expected: "",
                     points: 1,
-                    published: false,
+                    published: false
                 },
                 {
                     id: 47,
@@ -719,7 +719,7 @@ describe("Testing the Question[] functions", () => {
                     options: [],
                     expected: "",
                     points: 1,
-                    published: false,
+                    published: false
                 },
                 {
                     id: 2,
@@ -729,9 +729,9 @@ describe("Testing the Question[] functions", () => {
                     options: [],
                     expected: "",
                     points: 1,
-                    published: false,
-                },
-            ],
+                    published: false
+                }
+            ]
         );
         expect(renameQuestionById(SIMPLE_QUESTIONS, 5, "Colours")).toEqual([
             {
@@ -742,7 +742,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "4",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 2,
@@ -752,7 +752,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Z",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 5,
@@ -762,7 +762,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["red", "apple", "firetruck"],
                 expected: "red",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 9,
@@ -772,21 +772,21 @@ describe("Testing the Question[] functions", () => {
                 options: ["square", "triangle", "circle"],
                 expected: "circle",
                 points: 2,
-                published: false,
-            },
+                published: false
+            }
         ]);
     });
 
-    test("(3 pts) Test the changeQuestionTypeById function", () => {
+    test("Test the changeQuestionTypeById function", () => {
         expect(
             changeQuestionTypeById(
                 BLANK_QUESTIONS,
                 1,
-                "multiple_choice_question",
-            ),
+                "multiple_choice_question"
+            )
         ).toEqual(BLANK_QUESTIONS);
         expect(
-            changeQuestionTypeById(BLANK_QUESTIONS, 1, "short_answer_question"),
+            changeQuestionTypeById(BLANK_QUESTIONS, 1, "short_answer_question")
         ).toEqual([
             {
                 id: 1,
@@ -796,7 +796,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 47,
@@ -806,7 +806,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 2,
@@ -816,15 +816,11 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
-            },
+                published: false
+            }
         ]);
         expect(
-            changeQuestionTypeById(
-                BLANK_QUESTIONS,
-                47,
-                "short_answer_question",
-            ),
+            changeQuestionTypeById(BLANK_QUESTIONS, 47, "short_answer_question")
         ).toEqual([
             {
                 id: 1,
@@ -834,7 +830,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 47,
@@ -844,7 +840,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 2,
@@ -854,15 +850,11 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
-            },
+                published: false
+            }
         ]);
         expect(
-            changeQuestionTypeById(
-                TRIVIA_QUESTIONS,
-                3,
-                "short_answer_question",
-            ),
+            changeQuestionTypeById(TRIVIA_QUESTIONS, 3, "short_answer_question")
         ).toEqual([
             {
                 id: 1,
@@ -872,7 +864,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["Bluey", "YoUDee", "Charles the Wonder Dog"],
                 expected: "YoUDee",
                 points: 7,
-                published: false,
+                published: false
             },
             {
                 id: 2,
@@ -882,11 +874,11 @@ describe("Testing the Question[] functions", () => {
                 options: [
                     "Knowledge is the light of the mind",
                     "Just U Do it",
-                    "Nothing, what's the motto with you?",
+                    "Nothing, what's the motto with you?"
                 ],
                 expected: "Knowledge is the light of the mind",
                 points: 3,
-                published: false,
+                published: false
             },
             {
                 id: 3,
@@ -896,12 +888,12 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Two",
                 points: 10,
-                published: false,
-            },
+                published: false
+            }
         ]);
     });
 
-    test("(3 pts) Testing the editOption function", () => {
+    test("Testing the addEditQuestionOption function", () => {
         expect(editOption(BLANK_QUESTIONS, 1, -1, "NEW OPTION")).toEqual([
             {
                 id: 1,
@@ -911,7 +903,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["NEW OPTION"],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 47,
@@ -921,7 +913,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 2,
@@ -931,8 +923,8 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
-            },
+                published: false
+            }
         ]);
         expect(editOption(BLANK_QUESTIONS, 47, -1, "Another option")).toEqual([
             {
@@ -943,7 +935,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 47,
@@ -953,7 +945,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["Another option"],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 2,
@@ -963,8 +955,8 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
-            },
+                published: false
+            }
         ]);
         expect(editOption(SIMPLE_QUESTIONS, 5, -1, "newspaper")).toEqual([
             {
@@ -975,7 +967,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "4",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 2,
@@ -985,7 +977,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Z",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 5,
@@ -995,7 +987,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["red", "apple", "firetruck", "newspaper"],
                 expected: "red",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 9,
@@ -1005,8 +997,8 @@ describe("Testing the Question[] functions", () => {
                 options: ["square", "triangle", "circle"],
                 expected: "circle",
                 points: 2,
-                published: false,
-            },
+                published: false
+            }
         ]);
         expect(editOption(SIMPLE_QUESTIONS, 5, 0, "newspaper")).toEqual([
             {
@@ -1017,7 +1009,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "4",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 2,
@@ -1027,7 +1019,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Z",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 5,
@@ -1037,7 +1029,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["newspaper", "apple", "firetruck"],
                 expected: "red",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 9,
@@ -1047,8 +1039,8 @@ describe("Testing the Question[] functions", () => {
                 options: ["square", "triangle", "circle"],
                 expected: "circle",
                 points: 2,
-                published: false,
-            },
+                published: false
+            }
         ]);
 
         expect(editOption(SIMPLE_QUESTIONS, 5, 2, "newspaper")).toEqual([
@@ -1060,7 +1052,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "4",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 2,
@@ -1070,7 +1062,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "Z",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 5,
@@ -1080,7 +1072,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["red", "apple", "newspaper"],
                 expected: "red",
                 points: 1,
-                published: true,
+                published: true
             },
             {
                 id: 9,
@@ -1090,12 +1082,12 @@ describe("Testing the Question[] functions", () => {
                 options: ["square", "triangle", "circle"],
                 expected: "circle",
                 points: 2,
-                published: false,
-            },
+                published: false
+            }
         ]);
     });
 
-    test("(3 pts) Testing the duplicateQuestionInArray function", () => {
+    test("Testing the duplicateQuestionInArray function", () => {
         expect(duplicateQuestionInArray(BLANK_QUESTIONS, 1, 27)).toEqual([
             {
                 id: 1,
@@ -1105,7 +1097,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 27,
@@ -1115,7 +1107,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 47,
@@ -1125,7 +1117,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 2,
@@ -1135,8 +1127,8 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
-            },
+                published: false
+            }
         ]);
         expect(duplicateQuestionInArray(BLANK_QUESTIONS, 47, 19)).toEqual([
             {
@@ -1147,7 +1139,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 47,
@@ -1157,7 +1149,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 19,
@@ -1167,7 +1159,7 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
+                published: false
             },
             {
                 id: 2,
@@ -1177,8 +1169,8 @@ describe("Testing the Question[] functions", () => {
                 options: [],
                 expected: "",
                 points: 1,
-                published: false,
-            },
+                published: false
+            }
         ]);
         expect(duplicateQuestionInArray(TRIVIA_QUESTIONS, 3, 111)).toEqual([
             {
@@ -1189,7 +1181,7 @@ describe("Testing the Question[] functions", () => {
                 options: ["Bluey", "YoUDee", "Charles the Wonder Dog"],
                 expected: "YoUDee",
                 points: 7,
-                published: false,
+                published: false
             },
             {
                 id: 2,
@@ -1199,11 +1191,11 @@ describe("Testing the Question[] functions", () => {
                 options: [
                     "Knowledge is the light of the mind",
                     "Just U Do it",
-                    "Nothing, what's the motto with you?",
+                    "Nothing, what's the motto with you?"
                 ],
                 expected: "Knowledge is the light of the mind",
                 points: 3,
-                published: false,
+                published: false
             },
             {
                 id: 3,
@@ -1213,11 +1205,11 @@ describe("Testing the Question[] functions", () => {
                 options: [
                     "Zero, why would there be goats on the green?",
                     "18420",
-                    "Two",
+                    "Two"
                 ],
                 expected: "Two",
                 points: 10,
-                published: false,
+                published: false
             },
             {
                 id: 111,
@@ -1227,12 +1219,12 @@ describe("Testing the Question[] functions", () => {
                 options: [
                     "Zero, why would there be goats on the green?",
                     "18420",
-                    "Two",
+                    "Two"
                 ],
                 expected: "Two",
                 points: 10,
-                published: false,
-            },
+                published: false
+            }
         ]);
     });
 
